@@ -3,7 +3,7 @@ var cassandra=require("cassandra-driver");
 const client=new cassandra.Client({contactPoints:['localhost:9042'],keyspace:'sample'});
 const query='select *from employe';
 client.execute(query,function(err,result){
-if(err)
-	console.log(err)
+// if(err)
+// 	console.log(err)
 console.log(result.rows[0].name);
 });
