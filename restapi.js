@@ -13,11 +13,11 @@ app.get("/get",(req,res)=>{
 app.post("/post",(req,res)=>{
 		var name=JSON.stringify(req.body.name);
 
-	// var tasks=new mongoose({name:req.body.name})
-	// tasks.save((err)=>{
-	// 	if(err)
-	// 		console.error(err.message)
-	// })
+	var tasks=new mongoose({name:req.body.name})
+	tasks.save((err)=>{
+		if(err)
+			console.error(err.message)
+	})
 	db.colllections("tasks").insert({name:"guna sekhar"},(err,result)=>{
 		if (err) {
 			console.log(err);
